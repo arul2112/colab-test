@@ -1,0 +1,26 @@
+{
+  "name": "collaborative-drawing-board",
+  "version": "1.0.0",
+  "description": "Real-time collaborative drawing board with CRDT synchronization",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "collaborative",
+    "drawing",
+    "canvas",
+    "crdt",
+    "yjs",
+    "websocket"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2",
+    "y-websocket": "^1.5.0",
+    "yjs": "^13.6.8"
+  }
+}
