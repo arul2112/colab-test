@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f5f7fa;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.user-info {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.9rem;
+}
+
+#userId {
+    background: rgba(255,255,255,0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+}
+
+#activeUsers {
+    background: #27ae60;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+}
+
+.toolbar {
+    background: white;
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.tool-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.tool-btn {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.6rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2c3e50;
+}
+
+.tool-btn:hover {
+    background: #f0f0f0;
+    border-color: #3498db;
+}
+
+.tool-btn.active {
+    background: #3498db;
+    border-color: #3498db;
+    color: white;
+}
+
+label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+input[type="color"] {
+    width: 40px;
+    height: 32px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 0.4rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.canvas-container {
+    flex: 1;
+    position: relative;
+    overflow: auto;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#drawingCanvas {
+    border: 1px solid #e0e0e0;
+    cursor: crosshair;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#cursorsLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.cursor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+.cursor-pointer {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.cursor-label {
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    background: currentColor;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.status-bar {
+    background: #34495e;
+    color: white;
+    padding: 0.5rem 2rem;
+    font-size: 0.85rem;
+}
+
+#clearBtn {
+    background: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+#clearBtn:hover {
+    background: #c0392b;
+    border-color: #c0392b;
+}
+
+/* Scrollbar styling */
+.canvas-container::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.canvas-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.canvas-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.canvas-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
